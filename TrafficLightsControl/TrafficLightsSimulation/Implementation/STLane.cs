@@ -11,6 +11,7 @@ namespace TrafficLightsSimulation.Implementation
     class STLane : TrafficLane, ITrafficLane
     {
         STLaneProperties props;
+        Boolean[] occupiedSpaces;
 
         List<ITrafficLight> inTrafficLights = new List<ITrafficLight>();
         List<ITrafficLight> outTrafficLights = new List<ITrafficLight>();
@@ -18,7 +19,13 @@ namespace TrafficLightsSimulation.Implementation
         public STLane(STLaneProperties iProps, IFlowSensor iFlowSensor)
             : base(iFlowSensor)
         {
-            props = iProps; 
+            props = iProps;
+
+            occupiedSpaces = new Boolean[props.CapacityMax];
+            for (int i = 0; i < props.CapacityMax; i++ )
+            {
+                occupiedSpaces[i] = false;
+            }
         }
 
         public void SetFlowSensor(IFlowSensor ifSensor)
@@ -75,6 +82,22 @@ namespace TrafficLightsSimulation.Implementation
                     return light;
             }
             return null;
+        }
+
+
+        public bool IsSpaceOccupied(int space)
+        {
+            return occupiedSpaces[space];
+        }
+
+        public void FreeSpace(int space)
+        {
+            occupiedSpaces[space] = false;
+        }
+
+        public void OccupySpace(int space)
+        {
+            occupiedSpaces[space] = true;
         }
     }
 }

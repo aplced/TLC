@@ -8,6 +8,7 @@ namespace TrafficLightsSimulation.Interface
     public interface IVehicle
     {
         void SetStartLane(ITrafficLane lane);
+        ITrafficLane GetCurrentLane();
 
         Directions GetHeading();
         void SetCourse(List<Directions> course);

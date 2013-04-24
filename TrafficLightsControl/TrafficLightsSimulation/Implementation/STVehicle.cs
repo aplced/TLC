@@ -26,7 +26,11 @@ namespace TrafficLightsSimulation.Implementation
         {
             if (distanceToLights > 0)
             {
-                distanceToLights--;
+                if (!crntLane.IsSpaceOccupied(distanceToLights - 1))
+                {
+                    crntLane.FreeSpace(distanceToLights--);
+                    crntLane.OccupySpace(distanceToLights);
+                }
             }
             else
             {
@@ -35,17 +39,25 @@ namespace TrafficLightsSimulation.Implementation
                 {
                     if (light.GetTrafficLightState() == TrafficLightState.Green)
                     {
-                        crntLane = light.GetTrafficLane(heading);
-                        distanceToLights = crntLane.GetCapacityMax();
+                        var nextLane = light.GetTrafficLane(heading);
 
-                        crntCourse++;
-                        if (crntCourse < course.Count)
+                        if (nextLane.IsSpaceOccupied(nextLane.GetCapacityMax()))
                         {
-                            heading = course[crntCourse];
-                        }
-                        else
-                        {
-                            //Destination reached...
+                            crntLane.FreeSpace(distanceToLights);
+                            nextLane.OccupySpace(nextLane.GetCapacityMax());
+                            
+                            crntLane = nextLane;
+                            distanceToLights = crntLane.GetCapacityMax();
+
+                            crntCourse++;
+                            if (crntCourse < course.Count)
+                            {
+                                heading = course[crntCourse];
+                            }
+                            else
+                            {
+                                //Destination reached...
+                            }
                         }
                     }
                 }
@@ -58,7 +70,16 @@ namespace TrafficLightsSimulation.Implementation
 
         public void SetStartLane(ITrafficLane lane)
         {
-            crntLane = lane;
+            if (!lane.IsSpaceOccupied(lane.GetCapacityMax()))
+            {
+                lane.OccupySpace(lane.GetCapacityMax());
+                crntLane = lane;
+            }
+        }
+
+        public ITrafficLane GetCurrentLane()
+        {
+            return crntLane;
         }
 
         public Directions GetHeading()

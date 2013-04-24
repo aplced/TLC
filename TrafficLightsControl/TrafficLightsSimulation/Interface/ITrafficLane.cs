@@ -19,5 +19,9 @@ namespace TrafficLightsSimulation.Interface
 
         void AddOutTrafficLight(ITrafficLight tLight);
         ITrafficLight GetOutTrafficLight(Directions dir);
+
+        bool IsSpaceOccupied(Int32 space);
+        void FreeSpace(Int32 space);
+        void OccupySpace(Int32 space);
     }
 }
