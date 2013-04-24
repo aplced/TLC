@@ -28,6 +28,16 @@ namespace TrafficLightsSimulation.Implementation
             }
         }
 
+        public void SetId(String iLId)
+        {
+            props.Id = iLId;
+        }
+
+        public String GetId()
+        {
+            return props.Id;
+        }
+
         public void SetFlowSensor(IFlowSensor ifSensor)
         {
             flowSensor = ifSensor;

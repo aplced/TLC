@@ -7,6 +7,7 @@ namespace TrafficLightsSimulation.Implementation
 {
     public class STLaneProperties
     {
+        public String Id;
         public Int32 CapacityMax;
     }
 }

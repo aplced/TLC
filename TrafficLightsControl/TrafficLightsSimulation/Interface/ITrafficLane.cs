@@ -11,6 +11,9 @@ namespace TrafficLightsSimulation.Interface
         Int32 GetInflow();
         Int32 GetOutflow();
 
+        void SetId(String iLId);
+        String GetId();
+
         void SetFlowSensor(IFlowSensor ifSensor);
         IFlowSensor GetFlowSensor();
 

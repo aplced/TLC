@@ -7,3 +7,4 @@ C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsControl\obj\x86\Rel
 C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsControl\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsControl\obj\x86\Release\TrafficLightsControl.exe
 C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsControl\obj\x86\Release\TrafficLightsControl.pdb
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsControl\obj\x86\Release\WindowsFormsApplication1.AddLane.resources

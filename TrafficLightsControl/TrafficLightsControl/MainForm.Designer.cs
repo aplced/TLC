@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnAddLane = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnAddLane
+            // 
+            this.btnAddLane.Location = new System.Drawing.Point(12, 12);
+            this.btnAddLane.Name = "btnAddLane";
+            this.btnAddLane.Size = new System.Drawing.Size(75, 23);
+            this.btnAddLane.TabIndex = 0;
+            this.btnAddLane.Text = "Add Lane";
+            this.btnAddLane.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1065, 592);
+            this.Controls.Add(this.btnAddLane);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Main Form";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnAddLane;
     }
 }
 
