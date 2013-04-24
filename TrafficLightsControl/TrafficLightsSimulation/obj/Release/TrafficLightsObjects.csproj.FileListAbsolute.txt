@@ -1,0 +1,5 @@
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsSimulation\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsSimulation\bin\Release\TrafficLightsSimulation.dll
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsSimulation\bin\Release\TrafficLightsSimulation.pdb
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsSimulation\obj\Release\TrafficLightsSimulation.dll
+C:\Users\Administrator\TLO\TrafficLightsControl\TrafficLightsSimulation\obj\Release\TrafficLightsSimulation.pdb
